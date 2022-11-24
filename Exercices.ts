@@ -64,3 +64,36 @@ const plusGrandIndefini = function(...nombres: number[]) :string {
 }
 
 console.log(plusGrandIndefini(12, 15, 18, 65, -80, 8));
+
+
+// Exercice 6 -> Calcul la moyenne de l'élève et retourne une mention
+
+/** Calcul la moyenne du tableau de notes passé en paramètres */
+const moyenneEleve = function(notes: number[]) :number {
+    let moyenne :number = 0;
+    for (let index = 0; index < notes.length; index++) {
+        moyenne = moyenne + notes[index];
+    }
+    moyenne = moyenne / notes.length;
+    return moyenne;
+}
+
+/** Affiche une mention en fonction de la liste de notes de l'élève */
+const mentionEleve = function(nom: string, ...notes: number[]) :string {
+    let moyenne :number = moyenneEleve(notes);
+    if (moyenne >= 0 && moyenne <= 4) {
+        return ("Catastrophique");
+    } else if (moyenne >= 5 && moyenne <= 10) {
+        return ("Insuffisant");
+    } else if (moyenne >= 11 && moyenne <= 14) {
+        return ("Passable");
+    } else if (moyenne >= 15 && moyenne <= 18) {
+        return ("Bien");
+    } else if (moyenne >= 19 && moyenne <= 20) {
+        return ("Très bien");
+    } else {
+    return ("Moyenne non valide");
+    }
+}
+
+console.log(mentionEleve("Audrey", 12, 15, 18, 15, 19));
