@@ -32,3 +32,19 @@ const benefice = function(coutFabrication: number, prixVente: number) {
 }
 
 benefice(8, 20);
+
+
+// Exercice 4 -> Fonction qui retourne le plus grand des 3 nombres passés en paramètres
+
+//** Retourne le plus grand des 3 nombre en paramètres */
+const plusGrand = function(nombre1: number, nombre2: number, nombre3: number) {
+    let resultat = nombre1; // On passe le premier nombre dans une variable intermédiaire
+    if (nombre2 > resultat) { // Si le nombre 2 est supérieur à celui de la variable intermédiaire
+        resultat = nombre2;
+    } else if (nombre3 > resultat) { // Si le nombre 3 est supérieur à celui de la variable intermédiaire
+        resultat = nombre3;
+    }
+    return console.log(`Le nombre le plus grand parmi ${nombre1}, ${nombre2} et ${nombre3} est ${resultat}`);
+}
+
+plusGrand(12, 18, -20);
