@@ -72,7 +72,13 @@ console.log(plusGrandIndefini(12, 15, 18, 65, -80, 8));
 const moyenneEleve = function(notes: number[]) :number {
     let moyenne :number = 0;
     for (let index = 0; index < notes.length; index++) {
-        moyenne = moyenne + notes[index];
+        if (notes[index] < 0 || notes[index] > 20) {
+            console.log("Note non valide");
+            moyenne = -1; // Passe la moyenne en "non valide" pour ne pas exécuter la fonction suivante
+            break;
+        } else {
+            moyenne = moyenne + notes[index];
+        }
     }
     moyenne = moyenne / notes.length;
     return moyenne;
@@ -96,7 +102,7 @@ const mentionEleve = function(nom: string, ...notes: number[]) :string {
     }
 }
 
-console.log(mentionEleve("Audrey", 12, 15, 18, 15, 19));
+console.log(mentionEleve("Audrey", 12, 15, -18, 15, 19));
 
 
 // Exercice 7 -> Fonction qui prend en paramètres deux nombres et un opérateur et effectue l'opération
@@ -107,3 +113,16 @@ const operation = function (nombre1: number, operateur: string, nombre2: number)
 }
 
 console.log(operation(12, "+", 8));
+
+// Exercice 8 -> Fonction qui prend en paramètre un nombre et affiche une pyramide d'étoiles
+
+const pyramideEtoiles = function (nombre: number) :void {
+    for (let index = 1; index <= nombre; index++) {
+        console.log("*".repeat(index));
+    }
+    for (let index = nombre-1; index > 0; index--) {
+        console.log("*".repeat(index));
+    }
+}
+
+pyramideEtoiles(10);
