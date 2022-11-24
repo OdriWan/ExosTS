@@ -116,6 +116,7 @@ console.log(operation(12, "+", 8));
 
 // Exercice 8 -> Fonction qui prend en paramètre un nombre et affiche une pyramide d'étoiles
 
+//** Retourne une pyramide du nombre d'étoiles passé en paramètres */
 const pyramideEtoiles = function (nombre: number) :void {
     for (let index = 1; index <= nombre; index++) {
         console.log("*".repeat(index));
