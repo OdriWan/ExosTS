@@ -127,3 +127,36 @@ const pyramideEtoiles = function (nombre: number) :void {
 }
 
 pyramideEtoiles(10);
+
+// Exercice 9 -> Fonction qui prend en paramètre un nombre décimal et qui retourne le nombre de billets et de pièces nécessaires pour atteindre ce nombre
+
+const monnaie = function (nombre: number) :void {
+    const monnaie :number[] = [500, 200, 20, 10, 5, 2, 0.5, 0.02, 0.01];
+    let resultat :number = nombre;
+    let compteur :number = 0;
+    console.log(resultat);
+    // while (resultat > 0) {
+    //     for (let index = 0; monnaie.length > 0; index++) {
+    //         if (resultat - monnaie[index] > 0) {
+    //             resultat = resultat - monnaie[index];
+    //             console.log(resultat);
+    //         }
+    //     }
+    for (let index = 0; index < monnaie.length ; index ++) {
+        while(resultat - monnaie[index] >= 0) {
+            resultat = Math.round(resultat * 100)/100 - monnaie[index];
+            console.log(resultat);
+            compteur ++;
+            console.log(compteur);
+        }          
+        /*if (monnaie[index] > 2) {
+                console.log(`Billet(s) de ${monnaie[index]} : ${compteur}}`);
+            } else {
+                console.log(`Pièce(s) de ${monnaie[index]} : ${compteur}}`);
+            } */
+        compteur = 0;
+    }
+}
+
+
+monnaie(2437.57)
