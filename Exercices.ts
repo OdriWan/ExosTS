@@ -97,3 +97,13 @@ const mentionEleve = function(nom: string, ...notes: number[]) :string {
 }
 
 console.log(mentionEleve("Audrey", 12, 15, 18, 15, 19));
+
+
+// Exercice 7 -> Fonction qui prend en paramètres deux nombres et un opérateur et effectue l'opération
+
+/** Retourne le résultat de deux nombres et d'un opérateur passés en paramètres */
+const operation = function (nombre1: number, operateur: string, nombre2: number) :number {
+    return parseInt(eval(`${nombre1} ${operateur} ${nombre2}`));
+}
+
+console.log(operation(12, "+", 8));
