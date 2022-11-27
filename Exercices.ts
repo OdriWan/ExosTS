@@ -160,3 +160,31 @@ const monnaie = function (nombre: number): void {
 };
 
 monnaie(2437.57);
+
+// Exercice 10 -> Fonction qui prend en paramètre un nombre indéfini de températures et retourne la plus proche de 0
+
+/**
+ * Compare une liste de températures et retourne celle qui est la plus proche de 0
+ * @param temperatures Liste de températures à comparer
+ * @returns La température la plus proche de 0
+ */
+const plusProcheZero = function (...temperatures: number[]): number {
+  let resultat: number = temperatures.reduce(function (
+    precedent,
+    actuel
+  ): number {
+    return Math.abs(actuel) < Math.abs(precedent) ? actuel : precedent;
+  });
+  return resultat;
+};
+
+console.log(
+  `La valeur la plus proche de 0 est de ${plusProcheZero(
+    12,
+    50,
+    -6,
+    8,
+    -2,
+    3
+  )} degrés`
+);
