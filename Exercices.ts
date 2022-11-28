@@ -1,6 +1,10 @@
 // Exercice 1 -> Fonction qui affiche bonjour suivi du prénom
 
-/** Retourne "Bonjour" suivi du prénom passée en paramètre*/
+/**
+ * Retourne "Bonjour" suivi du prénom passée en paramètre
+ * @param name Nom de la personne à saluer
+ * @returns Une salutation
+ */
 const hello = function (name: string): string {
   return `Bonjour ${name} !`;
 };
@@ -9,7 +13,12 @@ console.log(hello("Audrey"));
 
 // Exercice 2 -> Fonction qui prend deux nombres en paramètres et retourne la somme de ces deux nombres
 
-//** Retourne la somme de deux nombres passés en paramètre */
+/**
+ * Retourne la somme de deux nombres passés en paramètre
+ * @param nombre1 Premier nombre
+ * @param nombre2 Deuxième nombre
+ * @returns La somme des deux nombres
+ */
 const somme = function (nombre1: number, nombre2: number): number {
   return nombre1 + nombre2;
 };
@@ -18,7 +27,12 @@ console.log(somme(18, 9));
 
 // Exercice 3 -> Fonction qui prend en paramètre le coût de fabrication et son prix de vente et retourne le bénéfice
 
-/** Retourne s'il y a un gain ou une perte en fonction du coût de fabrication et du prix de vente */
+/**
+ * Retourne s'il y a un gain ou une perte en fonction du coût de fabrication et du prix de vente
+ * @param coutFabrication Coût de fabrication
+ * @param prixVente Prix de vente
+ * @returns S'il y a un gain ou une perte
+ */
 const benefice = function (coutFabrication: number, prixVente: number): string {
   if (prixVente > coutFabrication) {
     // Si le prix de vente est supérieur au coût de fabrication -> Gain
@@ -36,7 +50,9 @@ console.log(benefice(8, 20));
 
 // Exercice 4 -> Fonction qui retourne le plus grand des 3 nombres passés en paramètres
 
-//** Retourne le plus grand des 3 nombre en paramètres */
+/**
+ * Retourne le plus grand des 3 nombre en paramètres
+ */
 const plusGrand = function (
   nombre1: number,
   nombre2: number,
@@ -57,7 +73,11 @@ console.log(plusGrand(12, 18, -20));
 
 // Exercice 5 -> Fonction qui retourne le plus grand d'un nombre indéfini de nombre
 
-/** Retourne le plus grand nombre d'une liste indéfinie */
+/**
+ * Retourne le plus grand nombre d'une liste indéfinie
+ * @param nombres Liste de nombres indéfinie
+ * @returns Le plus grand nombre de la liste
+ */
 const plusGrandIndefini = function (...nombres: number[]): string {
   let resultat: number = nombres[0];
   for (let index = 1; index < nombres.length; index++) {
@@ -72,7 +92,11 @@ console.log(plusGrandIndefini(12, 15, 18, 65, -80, 8));
 
 // Exercice 6 -> Calcul la moyenne de l'élève et retourne une mention
 
-/** Calcul la moyenne du tableau de notes passé en paramètres */
+/**
+ * Calcul la moyenne du tableau de notes passé en paramètres
+ * @param notes Tableau de notes
+ * @returns La moyenne des notes
+ */
 const moyenneEleve = function (notes: number[]): number {
   let moyenne: number = 0;
   for (let index = 0; index < notes.length; index++) {
@@ -88,7 +112,12 @@ const moyenneEleve = function (notes: number[]): number {
   return moyenne;
 };
 
-/** Affiche une mention en fonction de la liste de notes de l'élève */
+/**
+ * Affiche une mention en fonction de la liste de notes de l'élève
+ * @param nom Nom de l'élève
+ * @param notes Liste de notes indéfinie
+ * @returns L'appréciation associée à la moyenne de l'élève
+ */
 const mentionEleve = function (nom: string, ...notes: number[]): string {
   let moyenne: number = moyenneEleve(notes);
   if (moyenne >= 0 && moyenne <= 4) {
@@ -110,7 +139,13 @@ console.log(mentionEleve("Audrey", 12, 15, -18, 15, 19));
 
 // Exercice 7 -> Fonction qui prend en paramètres deux nombres et un opérateur et effectue l'opération
 
-/** Retourne le résultat de deux nombres et d'un opérateur passés en paramètres */
+/**
+ * Retourne le résultat de deux nombres et d'un opérateur passés en paramètres
+ * @param nombre1 Premier nombre
+ * @param operateur Opérateur
+ * @param nombre2 Deuxième nombre
+ * @returns Opération résultante des deux nombres et de l'opérateur
+ */
 const operation = function (
   nombre1: number,
   operateur: string,
@@ -123,7 +158,10 @@ console.log(operation(12, "+", 8));
 
 // Exercice 8 -> Fonction qui prend en paramètre un nombre et affiche une pyramide d'étoiles
 
-//** Retourne une pyramide du nombre d'étoiles passé en paramètres */
+/**
+ * Retourne une pyramide du nombre d'étoiles passé en paramètres
+ * @param nombre Nombre d'étoiles maximum
+ */
 const pyramideEtoiles = function (nombre: number): void {
   for (let index = 1; index <= nombre; index++) {
     console.log("*".repeat(index));
