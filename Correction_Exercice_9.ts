@@ -1,3 +1,7 @@
+/**
+ * Retourne le nombre de billets et de pièces nécessaires
+ * @param nombre Valeur à identifier
+ */
 function monnaieDeux(nombre: number): void {
   const monnaies: number[] = [
     500, 200, 100, 50, 20, 10, 5, 2, 1, 0.5, 0.02, 0.01,
